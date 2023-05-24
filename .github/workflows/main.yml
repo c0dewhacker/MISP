@@ -6,10 +6,10 @@ name: misp
 # events but only for the 2.4 and develop branches
 on:
   workflow_dispatch:
-  push:
-    branches: [ 2.4, develop, misp-stix, taxii ]
-  pull_request:
-    branches: [ 2.4, develop, misp-stix ]
+    inputs:
+      branch:
+        description: 'The branch to build'
+        required: true
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
